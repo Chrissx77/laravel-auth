@@ -15,7 +15,7 @@
 
             <a href="{{route('show', $project -> id) }}">Dettagli </a>
 
-            <a href="{{route('show', $project -> id) }}">Edit </a>
+            <a href="{{route('edit', $project -> id) }}">Edit </a>
 
             <form action="{{ route('destroy', $project -> id ) }}" method="POST">
 

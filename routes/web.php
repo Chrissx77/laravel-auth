@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ProjectController;
+use SebastianBergmann\CodeCoverage\Report\Xml\Project;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,8 @@ use App\Http\Controllers\ProjectController;
 Route::get('/', [ProjectController :: class, 'index']) -> name('welcome');
 Route::get('/{id}', [ProjectController :: class, 'show']) -> name('show');
 Route::delete('/{id}', [ProjectController :: class, 'destroy']) -> name('destroy');
-Route::delete('/{id}/edit', [ProjectController :: class, 'edit']) -> name('edit');
+Route::get('/{id}/edit', [ProjectController :: class, 'edit']) -> name('edit');
+Route :: put('/{id}', [ProjectController :: class, 'update']) -> name('update');
 
 
 Route::get('/dashboard', function () {

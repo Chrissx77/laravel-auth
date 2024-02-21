@@ -77,7 +77,19 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $project = Project :: find($id);
+        $data = $request -> all();
+
+        $project -> name = $data['name'];
+        $project -> date = $data['date'];
+        $project -> description = $data['description'];
+        $project -> image = $data['image'];
+        $project -> collaborators = $data['collaborators'];
+        $project -> projectLeader = $data['projectLeader'];
+
+        $project -> save();
+
+        return redirect() -> route('welcome', $project -> id);
     }
 
     /**
