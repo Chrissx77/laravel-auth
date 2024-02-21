@@ -17,9 +17,10 @@ class ProjectFactory extends Factory
     public function definition()
     {
         return [
-            'name'=> fake()-> words(3, true) ,
+            'name'=> fake()->unique()-> words(3, true) ,
             'description'=> fake()-> paragraph(),
-            'image'=> fake()-> imageUrl() ,
+            'image'=> fake()-> imageUrl(),
+            'collaborators'=> fake()-> name($gender = 'male'|'female'),
         ];
     }
 }
