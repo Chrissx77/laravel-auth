@@ -3,6 +3,8 @@
 body {
     background: rgb(192,191,191);
     background: linear-gradient(129deg, rgba(192,191,191,1) 0%, rgba(255,255,255,1) 5%, rgba(255,255,255,1) 95%, rgba(192,191,191,1) 100%);
+    background-repeat: no-repeat;
+    height: 100%;
 }
 
 .ms_container {
