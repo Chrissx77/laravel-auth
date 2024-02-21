@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Project>
  */
@@ -14,13 +15,27 @@ class ProjectFactory extends Factory
      *
      * @return array<string, mixed>
      */
+
+
+
+
+
     public function definition()
     {
+
+        $names = [];
+
+        for ($i = 0; $i < 3; $i++) {
+            $names[] = fake()->name();
+        }
+
+        $collaboratorsString = implode(', ', $names);
+
         return [
             'name'=> fake()->unique()-> words(3, true) ,
             'description'=> fake()-> paragraph(),
             'image'=> fake()-> imageUrl(),
-            'collaborators'=> fake()-> name($gender = 'male'|'female'),
+            'collaborators' => $collaboratorsString,
         ];
     }
 }
