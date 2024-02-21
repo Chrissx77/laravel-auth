@@ -1,22 +1,23 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="container">
-    <h1 class="my-4">Progetti: {{ count($projects) }}</h1>
-
-    <div>
+    <h1 class="text-center my-4">Progetti: {{ count($projects) }}</h1>
+<div class="ms_container">
+    <div class="ms_single_container">
         @foreach ($projects as $project)
         <div class="card p-2 my-3 border">
-            <h2 class="text-uppercase text-primary font-weight-bold">{{ $project->name }}</h2>
-            <p>{{ $project->description }}</p>
-            <img src="{{ $project->image }}" class="p-5 text-center img-fluid" alt="Immagine del progetto"><br>
+            <h2 class="text-uppercase text-primary font-weight-bold text-center my-1">{{ $project->name }}</h2>
+            <div class="ms_img_container d-flex justify-content-center my-3">
+                <img src="{{ $project->image }}" class="text-center img-fluid border border-secondary rounded" alt="Immagine del progetto"><br>
+            </div>
+            <div class="ms_description">
+                <h5>Descrizione: </h5>
+                <p>{{ $project->description }}</p>
+            </div>
             <h5 class="font-weight-bold">Collaboratori:</h5> <span class="font-italic">{{ $project->collaborators }}</span><br>
             <h5 class="font-weight-bold">Leader del progetto:</h5> <span class="font-italic">{{ $project->projectLeader }}</span><br>
         </div>
         @endforeach
     </div>
-
 </div>
-
-
 @endsection
