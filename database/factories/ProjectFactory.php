@@ -35,6 +35,7 @@ class ProjectFactory extends Factory
             'name'=> fake()->unique()-> words(3, true) ,
             'description'=> fake()-> paragraph(),
             'image'=> fake()-> imageUrl(),
+            'projectLeader'=> fake()->name($gender = 'male'|'female'),
             'collaborators' => $collaboratorsString,
         ];
     }

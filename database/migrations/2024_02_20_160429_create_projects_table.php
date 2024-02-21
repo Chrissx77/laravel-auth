@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('name')->unique() ;
             $table->string('description');
             $table->string('image');
-            $table->string('collaborators') ;
+            $table->string('collaborators');
+            $table->string('projectLeader');
 
 
             $table->timestamps();
