@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('image');
             $table->string('collaborators');
             $table->string('projectLeader');
+            $table->date('date');
 
 
             $table->timestamps();

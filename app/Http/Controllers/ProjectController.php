@@ -62,7 +62,10 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        //
+        $project = Project :: find($id);
+
+        return view('edit', compact('project'));
+
     }
 
     /**
@@ -85,6 +88,10 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $project = Project :: find($id);
+        $project -> delete();
+
+        return redirect() -> route('welcome');
+
     }
 }

@@ -10,19 +10,22 @@
             <div class="ms_img_container d-flex justify-content-center my-3">
                 <img src="{{ $project->image }}" class="text-center img-fluid border border-secondary rounded" alt="Immagine del progetto"><br>
             </div>
-            <div class="ms_description">
-                <h5>Descrizione: </h5>
-                <p>{{ $project->description }}</p>
-            </div>
-            {{-- <h5 class="font-weight-bold">Collaboratori:</h5> <span class="font-italic">{{ $project->collaborators }}</span><br>
-            <h5 class="font-weight-bold">Leader del progetto:</h5> <span class="font-italic">{{ $project->projectLeader }}</span><br> --}}
+            <div>{{$project -> date}}</div>
 
 
             <a href="{{route('show', $project -> id) }}">Dettagli </a>
 
             <a href="{{route('show', $project -> id) }}">Edit </a>
 
-            <a href="{{route('show', $project -> id) }}">Delete </a>
+            <form action="{{ route('destroy', $project -> id ) }}" method="POST">
+
+                @csrf
+                @method('DELETE')
+
+                <input type="submit" value="Delete">
+            </form>
+
+
         </div>
         @endforeach
     </div>

@@ -17,7 +17,9 @@ use App\Http\Controllers\ProjectController;
 */
 
 Route::get('/', [ProjectController :: class, 'index']) -> name('welcome');
-Route::get('/show/{id}', [ProjectController :: class, 'show']) -> name('show');
+Route::get('/{id}', [ProjectController :: class, 'show']) -> name('show');
+Route::delete('/{id}', [ProjectController :: class, 'destroy']) -> name('destroy');
+Route::delete('/{id}/edit', [ProjectController :: class, 'edit']) -> name('edit');
 
 
 Route::get('/dashboard', function () {

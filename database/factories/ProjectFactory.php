@@ -33,10 +33,11 @@ class ProjectFactory extends Factory
 
         return [
             'name'=> fake()->unique()-> words(3, true) ,
-            'description'=> fake()-> paragraph(),
+            'description'=> fake()-> sentence(),
             'image'=> fake()-> imageUrl(),
             'projectLeader'=> fake()->name($gender = 'male'|'female'),
             'collaborators' => $collaboratorsString,
+            'date'=> fake() -> date(),
         ];
     }
 }
