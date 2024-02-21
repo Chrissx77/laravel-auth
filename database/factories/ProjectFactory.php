@@ -22,10 +22,10 @@ class ProjectFactory extends Factory
 
     public function definition()
     {
-
+        $numberOfNames = rand(1, 3);
         $names = [];
 
-        for ($i = 0; $i < 3; $i++) {
+        for ($i = 0; $i < $numberOfNames; $i++) {
             $names[] = fake()->name();
         }
 
