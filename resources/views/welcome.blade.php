@@ -1,14 +1,18 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="jumbotron p-5 mb-4 bg-light rounded-3">
-    <div class="container">
-        <h1>ciao</h1>
-    </div>
+<h1 class="my-4">Progetti: {{ count($projects) }}</h1>
 
-</div>
+<ul class = "list-unstyled">
+    @foreach ($projects as $project)
+    <li class="my-3 border">
+        <strong>nome progetto:</strong> {{ $project -> name }} <br>
+        <strong>descrizione:</strong> {{ $project -> description }} <br>
+        <strong>immagine:</strong> {{ $project -> image }} <br>
+        <strong>collaboratori:</strong> {{ $project -> collaborators }} <br>
+        <strong>leader del progetto:</strong> {{ $project -> projectLeader }} <br>
+    </li>
+    @endforeach
+</ul>
 
-<div class="container">
-
-</div>
 @endsection
