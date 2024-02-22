@@ -89,7 +89,7 @@ class ProjectController extends Controller
 
         $project -> save();
 
-        return redirect() -> route('welcome', $project -> id);
+        return redirect() -> route('show', $project -> id);
     }
 
     /**
